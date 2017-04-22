@@ -1,0 +1,678 @@
+<div class="apidocDiv">
+<style>
+/*csslint
+*/
+.apidocDiv {
+    background: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.apidocDiv a[href] {
+    color: #33f;
+    font-weight: bold;
+    text-decoration: none;
+}
+.apidocDiv a[href]:hover {
+    text-decoration: underline;
+}
+.apidocCodeCommentSpan {
+    background: #bbf;
+    color: #000;
+    display: block;
+}
+.apidocCodeKeywordSpan {
+    color: #d00;
+    font-weight: bold;
+}
+.apidocCodePre {
+    background: #eef;
+    border: 1px solid;
+    color: #777;
+    padding: 5px;
+    white-space: pre-wrap;
+}
+.apidocFooterDiv {
+    margin-top: 20px;
+    text-align: center;
+}
+.apidocModuleLi {
+    margin-top: 10px;
+}
+.apidocSectionDiv {
+    border-top: 1px solid;
+    margin-top: 20px;
+}
+.apidocSignatureSpan {
+    color: #777;
+    font-weight: bold;
+}
+</style>
+<h1>api documentation for
+    <a
+
+        href="https://github.com/isaacs/core-util-is#readme"
+
+    >core-util-is (v1.0.2)</a>
+</h1>
+<h4>The `util.is*` functions introduced in Node v0.12.</h4>
+<div class="apidocSectionDiv"><a
+    href="#apidoc.tableOfContents"
+    id="apidoc.tableOfContents"
+><h1>table of contents</h1></a><ol>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.core-util-is">module core-util-is</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.core-util-is.isArray">
+            function <span class="apidocSignatureSpan">core-util-is.</span>isArray
+            <span class="apidocSignatureSpan">(arg)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.core-util-is.isBoolean">
+            function <span class="apidocSignatureSpan">core-util-is.</span>isBoolean
+            <span class="apidocSignatureSpan">(arg)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.core-util-is.isBuffer">
+            function <span class="apidocSignatureSpan">core-util-is.</span>isBuffer
+            <span class="apidocSignatureSpan">(b)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.core-util-is.isDate">
+            function <span class="apidocSignatureSpan">core-util-is.</span>isDate
+            <span class="apidocSignatureSpan">(d)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.core-util-is.isError">
+            function <span class="apidocSignatureSpan">core-util-is.</span>isError
+            <span class="apidocSignatureSpan">(e)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.core-util-is.isFunction">
+            function <span class="apidocSignatureSpan">core-util-is.</span>isFunction
+            <span class="apidocSignatureSpan">(arg)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.core-util-is.isNull">
+            function <span class="apidocSignatureSpan">core-util-is.</span>isNull
+            <span class="apidocSignatureSpan">(arg)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.core-util-is.isNullOrUndefined">
+            function <span class="apidocSignatureSpan">core-util-is.</span>isNullOrUndefined
+            <span class="apidocSignatureSpan">(arg)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.core-util-is.isNumber">
+            function <span class="apidocSignatureSpan">core-util-is.</span>isNumber
+            <span class="apidocSignatureSpan">(arg)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.core-util-is.isObject">
+            function <span class="apidocSignatureSpan">core-util-is.</span>isObject
+            <span class="apidocSignatureSpan">(arg)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.core-util-is.isPrimitive">
+            function <span class="apidocSignatureSpan">core-util-is.</span>isPrimitive
+            <span class="apidocSignatureSpan">(arg)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.core-util-is.isRegExp">
+            function <span class="apidocSignatureSpan">core-util-is.</span>isRegExp
+            <span class="apidocSignatureSpan">(re)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.core-util-is.isString">
+            function <span class="apidocSignatureSpan">core-util-is.</span>isString
+            <span class="apidocSignatureSpan">(arg)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.core-util-is.isSymbol">
+            function <span class="apidocSignatureSpan">core-util-is.</span>isSymbol
+            <span class="apidocSignatureSpan">(arg)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.core-util-is.isUndefined">
+            function <span class="apidocSignatureSpan">core-util-is.</span>isUndefined
+            <span class="apidocSignatureSpan">(arg)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+</ol></div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.core-util-is" id="apidoc.module.core-util-is">module core-util-is</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.core-util-is.isArray" id="apidoc.element.core-util-is.isArray">
+        function <span class="apidocSignatureSpan">core-util-is.</span>isArray
+        <span class="apidocSignatureSpan">(arg)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function isArray(arg) {
+  if (Array.isArray) {
+    return Array.isArray(arg);
+  }
+  return objectToString(arg) === &#x27;[object Array]&#x27;;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+
+
+var assert = require(&#x27;tap&#x27;);
+
+var t = require(&#x27;./lib/util&#x27;);
+
+assert.equal(t.<span class="apidocCodeKeywordSpan">isArray</span>([]), true);
+assert.equal(t.isArray({}), false);
+
+assert.equal(t.isBoolean(null), false);
+assert.equal(t.isBoolean(true), true);
+assert.equal(t.isBoolean(false), true);
+
+assert.equal(t.isNull(null), true);
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.core-util-is.isBoolean" id="apidoc.element.core-util-is.isBoolean">
+        function <span class="apidocSignatureSpan">core-util-is.</span>isBoolean
+        <span class="apidocSignatureSpan">(arg)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function isBoolean(arg) {
+  return typeof arg === &#x27;boolean&#x27;;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+var assert = require(&#x27;tap&#x27;);
+
+var t = require(&#x27;./lib/util&#x27;);
+
+assert.equal(t.isArray([]), true);
+assert.equal(t.isArray({}), false);
+
+assert.equal(t.<span class="apidocCodeKeywordSpan">isBoolean</span>(null), false);
+assert.equal(t.isBoolean(true), true);
+assert.equal(t.isBoolean(false), true);
+
+assert.equal(t.isNull(null), true);
+assert.equal(t.isNull(undefined), false);
+assert.equal(t.isNull(false), false);
+assert.equal(t.isNull(), false);
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.core-util-is.isBuffer" id="apidoc.element.core-util-is.isBuffer">
+        function <span class="apidocSignatureSpan">core-util-is.</span>isBuffer
+        <span class="apidocSignatureSpan">(b)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function isBuffer(b) {
+  return b instanceof Buffer;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+assert.equal(t.isFunction(function() {}), true);
+
+assert.equal(t.isPrimitive(null), true);
+assert.equal(t.isPrimitive(&#x27;&#x27;), true);
+assert.equal(t.isPrimitive(0), true);
+assert.equal(t.isPrimitive(new Date()), false);
+
+assert.equal(t.<span class="apidocCodeKeywordSpan">isBuffer</span>(null), false);
+assert.equal(t.isBuffer({}), false);
+assert.equal(t.isBuffer(new Buffer(0)), true);
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.core-util-is.isDate" id="apidoc.element.core-util-is.isDate">
+        function <span class="apidocSignatureSpan">core-util-is.</span>isDate
+        <span class="apidocSignatureSpan">(d)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function isDate(d) {
+  return objectToString(d) === &#x27;[object Date]&#x27;;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+assert.equal(t.isRegExp(new RegExp()), true);
+
+assert.equal(t.isObject({}), true);
+assert.equal(t.isObject([]), true);
+assert.equal(t.isObject(new RegExp()), true);
+assert.equal(t.isObject(new Date()), true);
+
+assert.equal(t.<span class="apidocCodeKeywordSpan">isDate</span>(null), false);
+assert.equal(t.isDate(&#x27;1&#x27;), false);
+assert.equal(t.isDate(new Date()), true);
+
+assert.equal(t.isError(null), false);
+assert.equal(t.isError({ err: true }), false);
+assert.equal(t.isError(new Error()), true);
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.core-util-is.isError" id="apidoc.element.core-util-is.isError">
+        function <span class="apidocSignatureSpan">core-util-is.</span>isError
+        <span class="apidocSignatureSpan">(e)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function isError(e) {
+  return (objectToString(e) === &#x27;[object Error]&#x27; || e instanceof Error);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+assert.equal(t.isObject(new RegExp()), true);
+assert.equal(t.isObject(new Date()), true);
+
+assert.equal(t.isDate(null), false);
+assert.equal(t.isDate(&#x27;1&#x27;), false);
+assert.equal(t.isDate(new Date()), true);
+
+assert.equal(t.<span class="apidocCodeKeywordSpan">isError</span>(null), false);
+assert.equal(t.isError({ err: true }), false);
+assert.equal(t.isError(new Error()), true);
+
+assert.equal(t.isFunction(null), false);
+assert.equal(t.isFunction({ }), false);
+assert.equal(t.isFunction(function() {}), true);
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.core-util-is.isFunction" id="apidoc.element.core-util-is.isFunction">
+        function <span class="apidocSignatureSpan">core-util-is.</span>isFunction
+        <span class="apidocSignatureSpan">(arg)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function isFunction(arg) {
+  return typeof arg === &#x27;function&#x27;;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+assert.equal(t.isDate(&#x27;1&#x27;), false);
+assert.equal(t.isDate(new Date()), true);
+
+assert.equal(t.isError(null), false);
+assert.equal(t.isError({ err: true }), false);
+assert.equal(t.isError(new Error()), true);
+
+assert.equal(t.<span class="apidocCodeKeywordSpan">isFunction</span>(null), false);
+assert.equal(t.isFunction({ }), false);
+assert.equal(t.isFunction(function() {}), true);
+
+assert.equal(t.isPrimitive(null), true);
+assert.equal(t.isPrimitive(&#x27;&#x27;), true);
+assert.equal(t.isPrimitive(0), true);
+assert.equal(t.isPrimitive(new Date()), false);
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.core-util-is.isNull" id="apidoc.element.core-util-is.isNull">
+        function <span class="apidocSignatureSpan">core-util-is.</span>isNull
+        <span class="apidocSignatureSpan">(arg)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function isNull(arg) {
+  return arg === null;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+assert.equal(t.isArray([]), true);
+assert.equal(t.isArray({}), false);
+
+assert.equal(t.isBoolean(null), false);
+assert.equal(t.isBoolean(true), true);
+assert.equal(t.isBoolean(false), true);
+
+assert.equal(t.<span class="apidocCodeKeywordSpan">isNull</span>(null), true);
+assert.equal(t.isNull(undefined), false);
+assert.equal(t.isNull(false), false);
+assert.equal(t.isNull(), false);
+
+assert.equal(t.isNullOrUndefined(null), true);
+assert.equal(t.isNullOrUndefined(undefined), true);
+assert.equal(t.isNullOrUndefined(false), false);
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.core-util-is.isNullOrUndefined" id="apidoc.element.core-util-is.isNullOrUndefined">
+        function <span class="apidocSignatureSpan">core-util-is.</span>isNullOrUndefined
+        <span class="apidocSignatureSpan">(arg)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function isNullOrUndefined(arg) {
+  return arg == null;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+assert.equal(t.isBoolean(false), true);
+
+assert.equal(t.isNull(null), true);
+assert.equal(t.isNull(undefined), false);
+assert.equal(t.isNull(false), false);
+assert.equal(t.isNull(), false);
+
+assert.equal(t.<span class="apidocCodeKeywordSpan">isNullOrUndefined</span>(null), true);
+assert.equal(t.isNullOrUndefined(undefined), true);
+assert.equal(t.isNullOrUndefined(false), false);
+assert.equal(t.isNullOrUndefined(), true);
+
+assert.equal(t.isNumber(null), false);
+assert.equal(t.isNumber(&#x27;1&#x27;), false);
+assert.equal(t.isNumber(1), true);
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.core-util-is.isNumber" id="apidoc.element.core-util-is.isNumber">
+        function <span class="apidocSignatureSpan">core-util-is.</span>isNumber
+        <span class="apidocSignatureSpan">(arg)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function isNumber(arg) {
+  return typeof arg === &#x27;number&#x27;;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+assert.equal(t.isNull(), false);
+
+assert.equal(t.isNullOrUndefined(null), true);
+assert.equal(t.isNullOrUndefined(undefined), true);
+assert.equal(t.isNullOrUndefined(false), false);
+assert.equal(t.isNullOrUndefined(), true);
+
+assert.equal(t.<span class="apidocCodeKeywordSpan">isNumber</span>(null), false);
+assert.equal(t.isNumber(&#x27;1&#x27;), false);
+assert.equal(t.isNumber(1), true);
+
+assert.equal(t.isString(null), false);
+assert.equal(t.isString(&#x27;1&#x27;), true);
+assert.equal(t.isString(1), false);
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.core-util-is.isObject" id="apidoc.element.core-util-is.isObject">
+        function <span class="apidocSignatureSpan">core-util-is.</span>isObject
+        <span class="apidocSignatureSpan">(arg)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function isObject(arg) {
+  return typeof arg === &#x27;object&#x27; &#x26;&#x26; arg !== null;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+assert.equal(t.isUndefined(false), false);
+assert.equal(t.isUndefined(), true);
+
+assert.equal(t.isRegExp(null), false);
+assert.equal(t.isRegExp(&#x27;1&#x27;), false);
+assert.equal(t.isRegExp(new RegExp()), true);
+
+assert.equal(t.<span class="apidocCodeKeywordSpan">isObject</span>({}), true);
+assert.equal(t.isObject([]), true);
+assert.equal(t.isObject(new RegExp()), true);
+assert.equal(t.isObject(new Date()), true);
+
+assert.equal(t.isDate(null), false);
+assert.equal(t.isDate(&#x27;1&#x27;), false);
+assert.equal(t.isDate(new Date()), true);
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.core-util-is.isPrimitive" id="apidoc.element.core-util-is.isPrimitive">
+        function <span class="apidocSignatureSpan">core-util-is.</span>isPrimitive
+        <span class="apidocSignatureSpan">(arg)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function isPrimitive(arg) {
+  return arg === null ||
+         typeof arg === &#x27;boolean&#x27; ||
+         typeof arg === &#x27;number&#x27; ||
+         typeof arg === &#x27;string&#x27; ||
+         typeof arg === &#x27;symbol&#x27; ||  // ES6 symbol
+         typeof arg === &#x27;undefined&#x27;;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+assert.equal(t.isError({ err: true }), false);
+assert.equal(t.isError(new Error()), true);
+
+assert.equal(t.isFunction(null), false);
+assert.equal(t.isFunction({ }), false);
+assert.equal(t.isFunction(function() {}), true);
+
+assert.equal(t.<span class="apidocCodeKeywordSpan">isPrimitive</span>(null), true);
+assert.equal(t.isPrimitive(&#x27;&#x27;), true);
+assert.equal(t.isPrimitive(0), true);
+assert.equal(t.isPrimitive(new Date()), false);
+
+assert.equal(t.isBuffer(null), false);
+assert.equal(t.isBuffer({}), false);
+assert.equal(t.isBuffer(new Buffer(0)), true);
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.core-util-is.isRegExp" id="apidoc.element.core-util-is.isRegExp">
+        function <span class="apidocSignatureSpan">core-util-is.</span>isRegExp
+        <span class="apidocSignatureSpan">(re)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function isRegExp(re) {
+  return objectToString(re) === &#x27;[object RegExp]&#x27;;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+assert.equal(t.isSymbol(Symbol()), true);
+
+assert.equal(t.isUndefined(null), false);
+assert.equal(t.isUndefined(undefined), true);
+assert.equal(t.isUndefined(false), false);
+assert.equal(t.isUndefined(), true);
+
+assert.equal(t.<span class="apidocCodeKeywordSpan">isRegExp</span>(null), false);
+assert.equal(t.isRegExp(&#x27;1&#x27;), false);
+assert.equal(t.isRegExp(new RegExp()), true);
+
+assert.equal(t.isObject({}), true);
+assert.equal(t.isObject([]), true);
+assert.equal(t.isObject(new RegExp()), true);
+assert.equal(t.isObject(new Date()), true);
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.core-util-is.isString" id="apidoc.element.core-util-is.isString">
+        function <span class="apidocSignatureSpan">core-util-is.</span>isString
+        <span class="apidocSignatureSpan">(arg)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function isString(arg) {
+  return typeof arg === &#x27;string&#x27;;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+assert.equal(t.isNullOrUndefined(false), false);
+assert.equal(t.isNullOrUndefined(), true);
+
+assert.equal(t.isNumber(null), false);
+assert.equal(t.isNumber(&#x27;1&#x27;), false);
+assert.equal(t.isNumber(1), true);
+
+assert.equal(t.<span class="apidocCodeKeywordSpan">isString</span>(null), false);
+assert.equal(t.isString(&#x27;1&#x27;), true);
+assert.equal(t.isString(1), false);
+
+assert.equal(t.isSymbol(null), false);
+assert.equal(t.isSymbol(&#x27;1&#x27;), false);
+assert.equal(t.isSymbol(1), false);
+assert.equal(t.isSymbol(Symbol()), true);
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.core-util-is.isSymbol" id="apidoc.element.core-util-is.isSymbol">
+        function <span class="apidocSignatureSpan">core-util-is.</span>isSymbol
+        <span class="apidocSignatureSpan">(arg)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function isSymbol(arg) {
+  return typeof arg === &#x27;symbol&#x27;;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+assert.equal(t.isNumber(&#x27;1&#x27;), false);
+assert.equal(t.isNumber(1), true);
+
+assert.equal(t.isString(null), false);
+assert.equal(t.isString(&#x27;1&#x27;), true);
+assert.equal(t.isString(1), false);
+
+assert.equal(t.<span class="apidocCodeKeywordSpan">isSymbol</span>(null), false);
+assert.equal(t.isSymbol(&#x27;1&#x27;), false);
+assert.equal(t.isSymbol(1), false);
+assert.equal(t.isSymbol(Symbol()), true);
+
+assert.equal(t.isUndefined(null), false);
+assert.equal(t.isUndefined(undefined), true);
+assert.equal(t.isUndefined(false), false);
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.core-util-is.isUndefined" id="apidoc.element.core-util-is.isUndefined">
+        function <span class="apidocSignatureSpan">core-util-is.</span>isUndefined
+        <span class="apidocSignatureSpan">(arg)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function isUndefined(arg) {
+  return arg === void 0;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+assert.equal(t.isString(1), false);
+
+assert.equal(t.isSymbol(null), false);
+assert.equal(t.isSymbol(&#x27;1&#x27;), false);
+assert.equal(t.isSymbol(1), false);
+assert.equal(t.isSymbol(Symbol()), true);
+
+assert.equal(t.<span class="apidocCodeKeywordSpan">isUndefined</span>(null), false);
+assert.equal(t.isUndefined(undefined), true);
+assert.equal(t.isUndefined(false), false);
+assert.equal(t.isUndefined(), true);
+
+assert.equal(t.isRegExp(null), false);
+assert.equal(t.isRegExp(&#x27;1&#x27;), false);
+assert.equal(t.isRegExp(new RegExp()), true);
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocFooterDiv">
+    [ this document was created with
+    <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a>
+    ]
+</div>
+</div>
